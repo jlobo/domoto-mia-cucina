@@ -1,0 +1,24 @@
+{
+  "name": "domoto-estufa-plugin",
+  "version": "0.0.1",
+  "description": "Plugin para la aplicación de domoto",
+  "main": "index.js",
+  "bin": {
+    "domoto": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/jloboprs/domoto-estufa-plugin.git"
+  },
+  "keywords": [
+    "domoto",
+    "domotic",
+    "domotica"
+  ],
+  "author": "José Lobo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/jloboprs/domoto-estufa-plugin/issues"
+  },
+  "homepage": "https://gitlab.com/jloboprs/domoto-estufa-plugin#README"
+}
