@@ -1,5 +1,5 @@
 {
-  "name": "domoto-estufa-plugin",
+  "name": "domoto-mia-cucina",
   "version": "0.0.1",
   "description": "Plugin para la aplicación de domoto",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/jloboprs/domoto-estufa-plugin.git"
+    "url": "git+ssh://git@gitlab.com/jloboprs/domoto-mia-cucina.git"
   },
   "keywords": [
     "domoto",
@@ -18,7 +18,7 @@
   "author": "José Lobo",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/jloboprs/domoto-estufa-plugin/issues"
+    "url": "https://gitlab.com/jloboprs/domoto-mia-cucina/issues"
   },
-  "homepage": "https://gitlab.com/jloboprs/domoto-estufa-plugin#README"
+  "homepage": "https://gitlab.com/jloboprs/domoto-mia-cucina#README"
 }
