@@ -1,6 +1,6 @@
 {
   "name": "domoto-mia-cucina",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Plugin para la aplicación de domoto",
   "main": "index.js",
   "bin": {
@@ -12,13 +12,15 @@
   },
   "keywords": [
     "domoto",
-    "domotic",
-    "domotica"
+    "domoto-extension"
   ],
   "author": "José Lobo",
   "license": "ISC",
   "bugs": {
     "url": "https://gitlab.com/jloboprs/domoto-mia-cucina/issues"
   },
-  "homepage": "https://gitlab.com/jloboprs/domoto-mia-cucina#README"
+  "homepage": "https://gitlab.com/jloboprs/domoto-mia-cucina#README",
+  "dependencies": {
+    "domoto": "0.0.2"
+  }
 }

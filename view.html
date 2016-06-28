@@ -1,0 +1,28 @@
+<template>
+  <div class="card">
+    <div class="card-content teal white-text">
+      <span class="card-title">Control</span>
+    </div>
+    <div class="card-content">
+      <p for="medium">Temperatura</p>
+      <input name="temperature" type="radio" value="high" id="high" />
+      <label for="high">Alta</label>
+
+      <input name="temperature" type="radio" value="medium" id="medium" checked="checked" />
+      <label for="medium">Media</label>
+
+      <input name="temperature" type="radio" value="low" id="low" />
+      <label for="low">Baja</label>
+      <p for="medium">Duracion</p>
+
+      <div class="range-field">
+        <input type="range" id="tiempo" min="1" max="60" name="minutes" value="15" />
+      </div>
+    </div>
+    <div class="card-action">
+      <div class="switch">
+        <label>Apagar <input type="checkbox" id="encender"><span class="lever"></span>Encender</label>
+      </div>
+    </div>
+  </div>
+</template>
