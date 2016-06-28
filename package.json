@@ -21,6 +21,7 @@
   },
   "homepage": "https://gitlab.com/jloboprs/domoto-mia-cucina#README",
   "dependencies": {
-    "domoto": "0.0.2"
+    "domoto": "0.0.2",
+    "socket.io-client": "^1.4.8"
   }
 }
