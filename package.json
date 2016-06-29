@@ -1,6 +1,6 @@
 {
   "name": "domoto-mia-cucina",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Plugin para la aplicación de domoto",
   "main": "index.js",
   "bin": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://gitlab.com/jloboprs/domoto-mia-cucina#README",
   "dependencies": {
-    "domoto": "0.0.2",
+    "domoto": "file:../domoto",
     "socket.io-client": "^1.4.8"
   }
 }
