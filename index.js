@@ -10,13 +10,14 @@ module.exports = class installView extends EventEmitter {
 
     this.controller = null;
     this.body = new ImportTemplate(path.resolve(__dirname, './view.html'));
-    this.itemMenu = new ItemMenu('domoto-mia-cucina').setHeader('Mia cucina', {left: 'power_settings_new'});
+    this.itemMenu = new ItemMenu('domoto-mia-cucina')
+      .setHeader('Mia cucina', {left: 'power_settings_new'});
 
     this.body.on('load', element => this._init(element));
   }
 
   _init() {
-    this.controller = new StoveController(ImportTemplate);
+    this.controller = new StoveController(this.body);
     this.emit('ready', this);
   }
 };

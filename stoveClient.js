@@ -1,15 +1,13 @@
 const io = require('socket.io-client');
-const EventEmitter = require('events');
 
-module.exports = class StoveClient extends EventEmitter {
+module.exports = class StoveClient {
   constructor(url = 'http://mia-cucina.herokuapp.com') {
-    super();
-
     this.url = url;
-    this.socket = io(url);
-    this.socket.on('status', response => this.emit('status', response));
-    this.socket.on('toggleOnOff', isOn => this.emit('toggleOnOf', isOn));
-    this.socket.on('connect', (uno, dos, tres) => this.emit('connect', uno, dos, tres));
+    this._socket = io(url);
+  }
+
+  on(event, listener) {
+    this._socket.on(event, listener);
   }
 
   turnOn(data) {
