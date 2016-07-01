@@ -1,9 +1,10 @@
 const StoveClient = require('./stoveClient');
 
 module.exports = class StoveController {
-  constructor(template) {
-    this._client = new StoveClient();
+  constructor(template, itemMenu) {
     this._temperatures = null;
+    this._itemMenu = itemMenu;
+    this._client = new StoveClient();
     this._time = template.getElementById('tiempo');
     this._turnOn = template.getElementById('encender');
     this._temperatures = [template.getElementById('high'),
@@ -15,6 +16,9 @@ module.exports = class StoveController {
     this._iconCloud = header.children[2];
 
     this._client.on('status', status => this._statusChange(status));
+    this._client.on('connect', () => { this._isConnected = true; });
+    this._client.on('disconnect', () => { this._isConnected = false; });
+    this._client.on('error', err => this._connectionError(err));
     this._turnOn.addEventListener('click', e => this.toggleTurnOn(e));
   }
 
@@ -33,6 +37,7 @@ module.exports = class StoveController {
   }
 
   set _isOn(value) {
+    this._itemMenu.leftIconOn = value;
     this._turnOn.checked = value;
     this._iconFire.innerText = value ? 'whatshot' : '';
     this.disabled = this.disabled;
@@ -75,11 +80,17 @@ module.exports = class StoveController {
     this.isOn ? this.turnOn() : this.turnOff();
   }
 
+  _connectionError(err) {
+    console.error(err);
+  }
+
   _statusChange(status) {
     this._isOn = status.isOn;
     this.temperature = status.temperature;
 
     if (status.minutes)
       this.time = status.minutes;
+    else if (status.isOn)
+      this.time = 0;
   }
 };
