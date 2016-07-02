@@ -13,6 +13,7 @@ module.exports = class installView extends EventEmitter {
     this.itemMenu = new ItemMenu('domoto-mia-cucina');
     this.itemMenu.description = 'Mia cucina';
     this.itemMenu.addLeftIcon('power_settings_new');
+    this.itemMenu.setRemoveBody();
 
     this.body = new ImportTemplate(path.resolve(__dirname, './view.html'));
     this.body.on('load', element => this._init(element));
