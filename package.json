@@ -1,6 +1,6 @@
 {
   "name": "domoto-mia-cucina",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Plugin para la aplicación de domoto",
   "main": "domotoMiaCucina.js",
   "bin": {
