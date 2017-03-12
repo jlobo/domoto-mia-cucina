@@ -1,29 +1,31 @@
 <template>
-  <div class="card">
-    <div class="card-content teal white-text">
-      <a href="http://mia-cucina.herokuapp.com" class="white-text card-title">Mia cucina</a>
-  	  <i class="material-icons"></i>
-      <i class="material-icons secondary-content">cloud_off</i>
-    </div>
-    <div class="card-content">
-      <p for="medium">Temperatura</p>
-      <input id="high" name="temperature" type="radio" value="high" />
-      <label for="high">Alta</label>
-
-      <input id="medium" name="temperature" type="radio" value="medium" checked="checked" />
-      <label for="medium">Media</label>
-
-      <input id="low" name="temperature" type="radio" value="low" />
-      <label for="low">Baja</label>
-      <p for="medium">Duracion</p>
-
-      <div class="range-field">
-        <input id="tiempo" type="range" min="1" max="60" name="minutes" value="15" />
+  <div class="container">
+    <div class="card">
+      <div class="card-content teal white-text">
+        <a href="http://mia-cucina.herokuapp.com" class="white-text card-title">Mia cucina</a>
+        <i class="material-icons"></i>
+        <i class="material-icons secondary-content">cloud_off</i>
       </div>
-    </div>
-    <div class="card-action">
-      <div class="switch">
-        <label>Apagar <input id="encender" type="checkbox"><span class="lever"></span>Encender</label>
+      <div class="card-content">
+        <p for="medium">Temperatura</p>
+        <input id="high" name="temperature" type="radio" value="high" />
+        <label for="high">Alta</label>
+
+        <input id="medium" name="temperature" type="radio" value="medium" checked="checked" />
+        <label for="medium">Media</label>
+
+        <input id="low" name="temperature" type="radio" value="low" />
+        <label for="low">Baja</label>
+        <p for="medium">Duracion</p>
+
+        <div class="range-field">
+          <input id="tiempo" type="range" min="1" max="60" name="minutes" value="15" />
+        </div>
+      </div>
+      <div class="card-action">
+        <div class="switch">
+          <label>Apagar <input id="encender" type="checkbox"><span class="lever"></span>Encender</label>
+        </div>
       </div>
     </div>
   </div>

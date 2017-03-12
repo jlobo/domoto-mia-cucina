@@ -37,7 +37,7 @@ module.exports = class StoveController {
   }
 
   set _isOn(value) {
-    this._itemMenu.leftIconOn = value;
+    this._itemMenu.iconOn = value;
     this._turnOn.checked = value;
     this._iconFire.innerText = value ? 'whatshot' : '';
     this.disabled = this.disabled;
