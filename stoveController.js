@@ -1,17 +1,14 @@
-const StoveClient = require('./stoveClient');
-
 module.exports = class StoveController {
-  constructor(template, itemMenu) {
+  constructor(view, itemMenu, stoveClient) {
     this._temperatures = null;
     this._itemMenu = itemMenu;
-    this._client = new StoveClient();
-    this._time = template.getElementById('tiempo');
-    this._turnOn = template.getElementById('encender');
-    this._temperatures = [template.getElementById('high'),
-      template.getElementById('medium'),
-      template.getElementById('low')];
+    this._client = stoveClient;
+    this._time = view.querySelector('#tiempo');
+    this._turnOn = view.querySelector('#encender');
+    this._temperatures = [view.querySelector('#high'),
+      view.querySelector('#medium'), view.querySelector('#low')];
 
-    const header = template.querySelector('.card-content');
+    const header = view.querySelector('.card-content');
     this._iconFire = header.children[1];
     this._iconCloud = header.children[2];
 
