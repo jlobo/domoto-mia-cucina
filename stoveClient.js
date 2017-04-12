@@ -1,37 +1,35 @@
-const io = require('socket.io-client');
-
 module.exports = class StoveClient {
-  constructor(url = 'http://mia-cucina.herokuapp.com') {
-    this.url = url;
-    this._socket = io(url);
+  constructor(client) {
+    this.client = client;
+    this.send = this.client.send.bind(this.client);
+    this.emit = this.client.emit.bind(this.client);
+    this.on = this.client.on.bind(this.client);
   }
 
-  on(event, listener) {
-    this._socket.on(event, listener);
+  get name() {
+    return this.client.name;
+  }
+
+  get url() {
+    return this.client.url;
   }
 
   turnOn(data) {
-    return $.ajax({
-      url: this._getUrl('/api/turnOn'),
+    return this.send({
+      url: '/api/turnOn',
       method: 'POST',
       data: data,
-      dataType: 'json',
     });
   }
 
   turnOff() {
-    return $.ajax({
-      url: this._getUrl('/api/turnOff'),
+    return this.send({
+      url: '/api/turnOff',
       method: 'POST',
-      dataType: 'json',
     });
   }
 
   status() {
-    return $.getJSON(this._getUrl('/api/status'));
-  }
-
-  _getUrl(path) {
-    return `${this.url}${path}`;
+    return this.send({ url: '/api/status' });
   }
 };
